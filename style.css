@@ -443,6 +443,7 @@ section h4 {
 .moreinfo-btn {
   display: inline-block;
   margin-top: 8px;
+  text-align: left;
   background: black;
   color: white;
   text-decoration: none;
