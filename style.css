@@ -387,7 +387,7 @@ section h4 {
    ===================== */
 .concerts-list {
   display: flex;
-  flex-direction: row;
+  flex-direction: collum;
   align-items: flex-start;
   gap: 60px;
   padding: 0 150px;
