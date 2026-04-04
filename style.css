@@ -11,7 +11,746 @@ body {
 }
 
 /* =====================
+   NAVBAR — DESKTOP* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #ffffff;
+  color: black;
+}
+
+/* =====================
    NAVBAR — DESKTOP
+   ===================== */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  padding: 36px 0;
+  z-index: 100;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 38px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.nav-link:visited,
+.nav-link:focus,
+.nav-link:active {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid black;
+}
+
+/* =====================
+   HAMBURGER BUTTON
+   ===================== */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 200;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: white;
+  transition: transform 0.3s, opacity 0.3s;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.6));
+}
+
+/* X state */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background: black;
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  background: black;
+}
+
+/* =====================
+   MOBILE NAV OVERLAY
+   ===================== */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 150;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-link {
+  text-decoration: none;
+  color: black;
+  font-size: 32px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+  transition: border-color 0.3s;
+}
+
+.mobile-link:visited,
+.mobile-link:focus,
+.mobile-link:active {
+  text-decoration: none;
+  color: black;
+}
+
+.mobile-link:hover {
+  border-bottom-color: black;
+}
+
+/* =====================
+   SCROLL TO TOP
+   ===================== */
+.scroll-top {
+  position: fixed;
+  bottom: 28px;
+  right: 20px;
+  z-index: 300;
+  width: 44px;
+  height: 44px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, background 0.2s;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.scroll-top:hover {
+  background: #333;
+}
+
+/* =====================
+   HERO / PIC SECTION
+   ===================== */
+.Pic {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 115px; /* desktop nav height */
+}
+
+.Pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pic-text {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 5;
+}
+
+.pic-text h1 {
+  font-size: 32px;
+  letter-spacing: 2.2px;
+}
+
+/* =====================
+   SECTIONS
+   ===================== */
+.section {
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 36px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+section h3 {
+  font-size: 18px;
+  margin-bottom: 60px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+section h4 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.section img:not(.duo-serrano-img):not(.duo-potpourri-img):not(.about-img):not(.concert-thumb):not(.hero-img) {
+  max-width: 150px;
+  width: 50%;
+  height: auto;
+  margin: 0 auto 30px;
+  display: block;
+}
+
+/* =====================
+   ABOUT LAYOUT
+   ===================== */
+.about-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 0 150px 40px;
+  text-align: left;
+}
+
+.about-img {
+  width: 30%;
+  min-width: 200px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.about-layout .about-text p {
+  margin: 0 0 16px 0;
+}
+
+.section p {
+  max-width: 100%;
+  margin: 20px 150px;
+  text-align: left;
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* =====================
+   VIDEO EMBED (About)
+   ===================== */
+.video {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.video iframe {
+  width: 500px;
+  height: 275px;
+  max-width: 100%;
+}
+
+/* =====================
+   DUO BLOCKS
+   ===================== */
+.duo-block {
+  margin: 0 150px 40px;
+  text-align: left;
+}
+
+.duo-title {
+  padding: 24px 0;
+  border-bottom: 2px solid #bebebe;
+}
+
+.duo-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-top: 24px;
+}
+
+.duo-video {
+  flex-shrink: 0;
+  width: auto;
+}
+
+.duo-serrano-img {
+  width: 320px;
+  height: auto;
+  display: block;
+}
+
+.duo-potpourri-img {
+  width: 320px;
+  height: auto;
+  display: block;
+}
+
+/* Embedded video below duo layout */
+.duo-embed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 40px;
+}
+
+.duo-embed iframe {
+  width: 400px;
+  height: 225px;
+  max-width: 100%;
+}
+
+.video-caption {
+  font-size: 12px;
+  margin: 6px 0 0 0;
+  text-align: center;
+  font-style: italic;
+  color: #444;
+}
+
+.duo-text p {
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+  text-align: left;
+}
+
+.linktree-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 20px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.linktree-btn:hover {
+  background: #eaeaea;
+  color: black;
+}
+
+.duo-divider {
+  display: none;
+}
+
+/* =====================
+   CONCERTS LIST
+   ===================== */
+.concerts-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 0 150px;
+}
+
+.concerts-year {
+  font-size: 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  min-width: 120px;
+  flex-shrink: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.concerts-items {
+  flex: 1;
+}
+
+.concert-item {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 0 24px 0;
+  margin-bottom: 24px;
+  margin-left: 150px;
+  border-bottom: 2px solid #bebebe;
+}
+
+.concert-thumb {
+  width: 160px;
+  min-width: 160px;
+  height: auto;
+  flex-shrink: 0;
+  display: block;
+}
+
+.concert-info {
+  flex: 1;
+}
+
+.concert-info p {
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-left: 60px;
+  margin-right: 150px;
+}
+
+/* =====================
+   CONTACT
+   ===================== */
+.contact-form {
+  padding: 0 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 40px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.form-group input,
+.form-group textarea {
+  border: 1px solid black;
+  padding: 12px;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  outline: none;
+  background: white;
+  width: 100%;
+  vertical-align: top;
+  text-align: left;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-submit button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 14px 60px;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.form-submit button:hover {
+  background: #333;
+}
+
+.contact-footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 150px 40px;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  flex-wrap: wrap;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+
+.contact-icon:hover {
+  opacity: 0.5;
+}
+
+/* =====================
+   MOBILE — ≤768px
+   ===================== */
+@media (max-width: 768px) {
+
+  /* Hide desktop nav links, keep nav bar as white strip */
+  .nav-link {
+    display: none;
+  }
+
+  .nav {
+  padding: 0;
+  height: 56px;
+  background: #ffffff;
+  box-shadow: none;
+  justify-content: flex-end;
+  padding-right: 16px;
+}
+
+  .hamburger {
+    display: flex;
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+
+  /* Hamburger lines black (on white bar) */
+  .hamburger span {
+    background: black;
+    filter: none;
+  }
+
+  /* X state stays black */
+  .hamburger.open span:nth-child(1) {
+    background: black;
+  }
+  .hamburger.open span:nth-child(3) {
+    background: black;
+  }
+
+  /* 40% right-side panel instead of full screen */
+  .mobile-menu {
+    display: flex;
+    top: 56px;
+    width: 40%;
+    left: auto;
+    right: 0;
+    height: calc(100% - 56px);
+    box-shadow: -4px 0 16px rgba(0,0,0,0.12);
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-link {
+    font-size: 22px;
+  }
+
+  .mobile-link:visited,
+  .mobile-link:focus,
+  .mobile-link:active {
+    text-decoration: none;
+    color: black;
+  }
+
+  /* Hero: full width, shorter on phone */
+  .Pic {
+    margin-top: 56px;
+    height: 60vw;
+    min-height: 240px;
+  }
+
+  .pic-text h1 {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+  }
+
+  /* Sections */
+  .section {
+    padding: 20px 16px;
+  }
+
+  .section h2 {
+    font-size: 26px;
+    margin-top: 30px;
+    margin-bottom: 24px;
+  }
+
+  section h3 {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  /* About: stack vertically */
+  .about-layout {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 24px;
+    gap: 20px;
+  }
+
+  .about-img {
+    width: 70% !important;
+    min-width: unset !important;
+  }
+
+  .section p {
+    margin: 12px 0;
+    font-size: 16px;
+  }
+
+  /* Inline video in about */
+  .video {
+    margin-top: 24px;
+  }
+
+  .video iframe {
+    width: 100%;
+    height: 52vw;
+  }
+
+  /* Duo blocks */
+  .duo-block {
+    margin: 0 0 32px;
+  }
+
+  .duo-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .duo-video {
+    width: 100%;
+  }
+
+  .duo-serrano-img,
+  .duo-potpourri-img {
+    width: 65%;
+    height: auto;
+    max-height: unset;
+    margin: 0 auto;
+  }
+
+  .duo-text p {
+    font-size: 16px;
+  }
+
+  .duo-embed iframe {
+    width: 100%;
+    height: 52vw;
+  }
+
+  /* Concerts list */
+  .concerts-list {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .concerts-year {
+    font-size: 20px;
+    min-width: unset;
+  }
+
+  .concert-item {
+    margin-left: 0;
+    gap: 12px;
+  }
+
+  .concert-thumb {
+    width: 80px;
+    min-width: 80px;
+    height: auto;
+  }
+
+  .concert-info p {
+    font-size: 15px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Contact */
+  .contact-form {
+    padding: 0 16px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-footer {
+    padding: 24px 16px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
    ===================== */
 .nav {
   position: fixed;
