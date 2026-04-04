@@ -440,6 +440,22 @@ section h4 {
   margin-right: 150px;
 }
 
+.moreinfo-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 20px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.moreinfo-btn:hover {
+  background: #eaeaea;
+  color: black;
+
 /* =====================
    CONTACT
    ===================== */
