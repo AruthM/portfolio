@@ -743,10 +743,13 @@ section h4 {
 
   /* Media */
 
-  
+    .media-list {
+    flex-direction: row;
+    gap: 16px;
+    padding: 0 16px;
+  }
     .media-pic {
   width: 290px;
-  min-width: 160px;
   height: auto;
   flex-shrink: 0;
   display: block;
