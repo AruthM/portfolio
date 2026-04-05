@@ -749,10 +749,11 @@ section h4 {
     padding: 0 16px;
   }
     .media-pic {
-  width: 380px;
+  width: 400px;
   height: auto;
   display: flex;
   justify-content: center;
+    flex-direction: row;
 }
       
   /* Contact */
