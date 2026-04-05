@@ -395,7 +395,7 @@ section h4 {
 }
 
 .concerts-year {
-  font-size: 24px;
+  font-size: 24px;    
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   min-width: 120px;
@@ -441,8 +441,10 @@ section h4 {
 }
 
 .moreinfo-btn {
-  display: inline-block;
+  display: block;
+  width: fit-content;
   margin-top: 8px;
+  margin-left: 60px;
   padding: 8px 20px;
   background: black;
   color: white;
@@ -554,6 +556,55 @@ section h4 {
 
 .contact-icon:hover {
   opacity: 0.5;
+}
+
+/* =====================
+   MEDIA PHOTOS
+   ===================== */
+.media-list {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 20px 150px;
+  justify-content: center;
+}
+
+.media-pic {
+  width: calc(33.333% - 6px);
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.media-pic:hover {
+  opacity: 0.85;
+}
+
+/* =====================
+   LIGHTBOX
+   ===================== */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
 }
 
 /* =====================
@@ -741,23 +792,19 @@ section h4 {
     margin-right: 0;
   }
 
-  /* Media */
 
+  /* Media photos */
   .media-list {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;             
-    padding: 20px 150px;
-    justify-content: center;
+    flex-direction: column;
+    padding: 20px 16px;
+    gap: 12px;
   }
 
   .media-pic {
-    width: calc(33.333% - 6px);
-    height: 300px;          
-    object-fit: cover;     
-    display: block;
+    width: 100%;
+    height: auto;
   }
-      
+
   /* Contact */
   .contact-form {
     padding: 0 16px;
