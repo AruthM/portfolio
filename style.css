@@ -790,7 +790,7 @@ section h4 {
   .concert-thumb {
   width: 160px;
   min-width: 160px;
-  height: auto;
+  height: 160px;
   flex-shrink: 0;
   display: block;
 }
