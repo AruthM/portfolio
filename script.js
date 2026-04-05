@@ -77,3 +77,28 @@ lightbox.addEventListener('click', () => {
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
 });
+// =====================
+// FADE-IN ON SCROLL
+// =====================
+const fadeEls = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      // Stagger delay for siblings
+      const isNoStagger = entry.target.closest('.no-stagger');
+
+if (isNoStagger) {
+  entry.target.style.animationDelay = '0s';
+} else {
+  const siblings = [...entry.target.parentElement.querySelectorAll('.fade-in')];
+  const index = siblings.indexOf(entry.target);
+  entry.target.style.animationDelay = (index * 0.1) + 's';
+}
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+fadeEls.forEach(el => observer.observe(el));
