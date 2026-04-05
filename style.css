@@ -741,6 +741,17 @@ section h4 {
     margin-right: 0;
   }
 
+  /* Media */
+
+  
+    .media-pic {
+  width: 290px;
+  min-width: 160px;
+  height: auto;
+  flex-shrink: 0;
+  display: block;
+}
+      
   /* Contact */
   .contact-form {
     padding: 0 16px;
