@@ -235,7 +235,7 @@ section h4 {
   font-weight: 600;
 }
 
-.section img:not(.duo-serrano-img):not(.duo-potpourri-img):not(.about-img):not(.concert-thumb):not(.hero-img) {
+.section img:not(.duo-serrano-img):not(.duo-potpourri-img):not(.about-img):not(.concert-thumb):not(.hero-img):not(.media-pic) {
   max-width: 150px;
   width: 50%;
   height: auto;
@@ -394,14 +394,11 @@ section h4 {
   padding: 0 150px;
 }
 
-.concerts-year {
-  font-size: 24px;    
+.section .concerts-year {
+  font-size: 20px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  min-width: 120px;
-  flex-shrink: 0;
-  padding-top: 0;
-  margin-top: 0;
+  font-weight: 400;
+  padding: 0 0 0 150px;
 }
 
 .concerts-items {
@@ -411,12 +408,16 @@ section h4 {
 .concert-item {
   display: flex;
   gap: 20px;
-  width: 100%;
-  max-width: 800px;
+  width: 700px;        
+  max-width: 100%;     
   padding: 0 0 24px 0;
   margin-bottom: 24px;
-  margin-left: 150px;
+  margin-left: 150px;      
   border-bottom: 2px solid #bebebe;
+}
+
+.concert-item.no-border {
+  border-bottom: none;
 }
 
 .concert-thumb {
@@ -766,6 +767,7 @@ section h4 {
     flex-direction: column;
     gap: 16px;
     padding: 0 16px;
+    overflow: hidden;
   }
 
   .concerts-year {
