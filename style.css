@@ -743,18 +743,20 @@ section h4 {
 
   /* Media */
 
-    .media-list {
+  .media-list {
+    display: flex;
     flex-direction: row;
-    gap: 16px;
-    padding: 0 16px;
+    gap: 8px;             
+    padding: 20px 150px;
+    justify-content: center;
   }
-    .media-pic {
-  width: 400px;
-  height: auto;
-  display: flex;
-  justify-content: center;
-    flex-direction: row;
-}
+
+  .media-pic {
+    width: calc(33.333% - 6px);
+    height: 300px;          
+    object-fit: cover;     
+    display: block;
+  }
       
   /* Contact */
   .contact-form {
