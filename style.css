@@ -237,9 +237,8 @@ section h4 {
 
 .section img:not(.duo-serrano-img):not(.duo-potpourri-img):not(.about-img):not(.concert-thumb):not(.hero-img) {
   max-width: 150px;
-  max-height: 150px;
   width: 50%;
-  height: 50%;
+  height: auto;
   margin: 0 auto 30px;
   display: block;
 }
