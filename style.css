@@ -866,6 +866,14 @@ section h4 {
   }
 }
 
+.concert-thumb {
+  object-position: center;
+}
+
+.concerts-list .concert-item:last-of-type .concert-thumb {
+  object-position: top;
+}
+
 .fade-in {
   opacity: 0;
 }
