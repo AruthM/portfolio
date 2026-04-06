@@ -660,7 +660,7 @@ section h4 {
     left: auto;
     right: 0;
     height: calc(100% - 56px);
-    box-shadow: -4px 0 16px rgba(0,0,0,0.12);
+    box-shadow: none;
   }
 
   .mobile-menu.open {
@@ -790,10 +790,12 @@ section h4 {
 
   .concert-thumb {
     width: 120px;
+    max-width: 120px;
     min-width: 120px;
     height: 120px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-    flex-shrink: 0;
+    flex: 0 0 120px;
     display: block;
   }
 
