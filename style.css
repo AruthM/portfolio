@@ -785,15 +785,17 @@ section h4 {
     margin-left: 0;
     width: 100%;
     gap: 12px;
+    align-items: flex-start;
   }
 
   .concert-thumb {
-  width: 160px;
-  min-width: 160px;
-  height: auto;
-  flex-shrink: 0;
-  display: block;
-}
+    width: 120px;
+    min-width: 120px;
+    height: 120px;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+  }
 
   .concert-info p {
     font-size: 15px;
